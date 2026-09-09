@@ -1,0 +1,48 @@
+{
+  "28811581": {
+    "userId": "28811581",
+    "enabled": true,
+    "balanceDiamonds": 67751,
+    "bonusPercent": 5,
+    "packages": [
+      {
+        "id": "pkg_default_300_100k",
+        "priceINR": 300,
+        "diamonds": 100000,
+        "label": "₹300 • 100K Diamonds • Custom amount supported",
+        "active": true
+      }
+    ],
+    "totalRechargeCount": 4,
+    "totalDiamondsDistributed": 432249,
+    "totalBonusDiamonds": 20583,
+    "createdAt": "2026-09-09T15:14:26.400Z",
+    "createdBy": {
+      "id": "owner-dbc572f6ef22",
+      "username": "admin"
+    }
+  },
+  "85006613": {
+    "userId": "85006613",
+    "enabled": true,
+    "balanceDiamonds": 0,
+    "bonusPercent": 0,
+    "packages": [
+      {
+        "id": "pkg_default_300_100k",
+        "priceINR": 300,
+        "diamonds": 100000,
+        "label": "₹300 • 100K Diamonds • Custom amount supported",
+        "active": true
+      }
+    ],
+    "totalRechargeCount": 0,
+    "totalDiamondsDistributed": 0,
+    "totalBonusDiamonds": 0,
+    "createdAt": "2026-09-09T14:53:17.623Z",
+    "createdBy": {
+      "id": "owner-dbc572f6ef22",
+      "username": "admin"
+    }
+  }
+}

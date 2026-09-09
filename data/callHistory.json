@@ -1,0 +1,15 @@
+{
+  "28811581_85006613": [
+    {
+      "callId": "8da33f7e-26e0-4eca-bfa2-6c5f8b024c2a",
+      "from": "85006613",
+      "to": "28811581",
+      "type": "audio",
+      "status": "completed",
+      "startedAt": 1788966320024,
+      "connectedAt": 1788966324631,
+      "endedAt": 1788966364360,
+      "durationSec": 40
+    }
+  ]
+}

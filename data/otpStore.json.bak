@@ -1,0 +1,10 @@
+{
+  "+918101221193": {
+    "hash": "c9597bbc28fe7cf230c1b6bbbc29e3bb344fca3c1467825ddfcae2ca498439ab",
+    "salt": "5b9f753eeaf300cd326fffbdfef9f552",
+    "expiresAt": 1788965698010,
+    "attempts": 0,
+    "createdAt": 1788965398010,
+    "requestId": "568ede95085a46ea6f0a5aba"
+  }
+}

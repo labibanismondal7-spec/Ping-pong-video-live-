@@ -1,0 +1,25 @@
+{
+  "28811581_85006613": [
+    {
+      "id": "e1bf592e-e0b5-4297-b8a0-e3c65353b6e6",
+      "from": "85006613",
+      "to": "28811581",
+      "message": "Hi",
+      "time": "2026-09-09T15:05:16.221Z"
+    },
+    {
+      "from": "28811581",
+      "to": "85006613",
+      "message": "💞 Friendship request from Rohan — 100,000 Diamonds",
+      "time": "2026-09-09T15:10:47.546Z",
+      "type": "relationship_request",
+      "data": {
+        "requestId": "rel_mtu8jvlo_215ae75f6f",
+        "relationshipType": "friendship",
+        "status": "pending",
+        "cost": 100000,
+        "expiresAt": 1788967247482
+      }
+    }
+  ]
+}

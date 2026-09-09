@@ -1,0 +1,66 @@
+[
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 100000,
+    "wealth": 100000,
+    "date": "2026-09-09T15:00:30.149Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966030147"
+  },
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 100000,
+    "wealth": 200000,
+    "date": "2026-09-09T15:00:43.784Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966043784"
+  },
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 100000,
+    "wealth": 300000,
+    "date": "2026-09-09T15:01:00.774Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966060774"
+  },
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 100000,
+    "wealth": 400000,
+    "date": "2026-09-09T15:01:15.563Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966075563"
+  },
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 100000,
+    "wealth": 500000,
+    "date": "2026-09-09T15:01:31.018Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966091018"
+  },
+  {
+    "uid": "85006613",
+    "type": "gift_sent",
+    "diamond": 1000,
+    "wealth": 1000,
+    "date": "2026-09-09T15:08:53.043Z",
+    "referenceId": "gift:gift_mtu8gu8q_77feba74:1788966533043"
+  },
+  {
+    "uid": "28811581",
+    "type": "gift_sent",
+    "diamond": 1000,
+    "wealth": 501000,
+    "date": "2026-09-09T15:09:00.936Z",
+    "referenceId": "gift:gift_mtu8gu8q_77feba74:1788966540936"
+  },
+  {
+    "uid": "28811581",
+    "type": "video_gift_sent",
+    "diamond": 700000,
+    "wealth": 1201000,
+    "date": "2026-09-09T15:09:38.653Z",
+    "referenceId": "videogift:vgift_mtu86161_29415789:1788966578653"
+  }
+]

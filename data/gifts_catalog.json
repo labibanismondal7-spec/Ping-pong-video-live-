@@ -1,0 +1,13 @@
+[
+  {
+    "id": "gift_mtu8gu8q_77feba74",
+    "name": "Apple",
+    "image": "/gift-images/1788966501135-1000036173.png",
+    "sound": null,
+    "price": 1000,
+    "effectType": "small",
+    "tier": "normal",
+    "enabled": true,
+    "createdAt": "2026-09-09T15:08:25.756Z"
+  }
+]

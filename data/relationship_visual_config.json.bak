@@ -1,0 +1,27 @@
+{
+  "version": 4,
+  "cp": {
+    "width": 40,
+    "height": 40,
+    "scale": 1,
+    "opacity": 0.98,
+    "animationEnabled": true,
+    "animationSpeedSec": 2.1,
+    "offsetX": 0,
+    "offsetY": 0,
+    "customAssetEnabled": false,
+    "customAssetPath": null
+  },
+  "friendship": {
+    "width": 104,
+    "height": 104,
+    "scale": 1,
+    "opacity": 0.98,
+    "animationEnabled": true,
+    "animationSpeedSec": 2.7,
+    "offsetX": 0,
+    "offsetY": 0,
+    "customAssetEnabled": false,
+    "customAssetPath": null
+  }
+}

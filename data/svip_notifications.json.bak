@@ -1,0 +1,58 @@
+[
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+100000 wealth",
+    "time": "2026-09-09T15:00:30.155Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+100000 wealth",
+    "time": "2026-09-09T15:00:43.785Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "level_up",
+    "message": "Congratulations! You are now SVIP1.",
+    "time": "2026-09-09T15:01:00.779Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+100000 wealth",
+    "time": "2026-09-09T15:01:00.780Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+100000 wealth",
+    "time": "2026-09-09T15:01:15.563Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+100000 wealth",
+    "time": "2026-09-09T15:01:31.018Z",
+    "read": false
+  },
+  {
+    "userId": "85006613",
+    "type": "wealth_added",
+    "message": "+1000 wealth",
+    "time": "2026-09-09T15:08:53.043Z",
+    "read": false
+  },
+  {
+    "userId": "28811581",
+    "type": "wealth_added",
+    "message": "+1000 wealth",
+    "time": "2026-09-09T15:09:00.936Z",
+    "read": false
+  }
+]

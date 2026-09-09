@@ -1,0 +1,26 @@
+{
+  "relationships": {
+    "28811581::85006613": {
+      "relationshipId": "rel_b2190abe7ed7dca2",
+      "type": "friendship",
+      "userA": "28811581",
+      "userB": "85006613",
+      "status": "accepted",
+      "createdAt": 1788966647482,
+      "acceptedAt": 1788966656048
+    }
+  },
+  "requests": {
+    "rel_mtu8jvlo_215ae75f6f": {
+      "requestId": "rel_mtu8jvlo_215ae75f6f",
+      "type": "friendship",
+      "fromUserId": "28811581",
+      "toUserId": "85006613",
+      "cost": 100000,
+      "status": "accepted",
+      "createdAt": 1788966647482,
+      "expiresAt": 1788967247482,
+      "updatedAt": "2026-09-09T15:10:56.048Z"
+    }
+  }
+}

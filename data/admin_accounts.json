@@ -1,0 +1,18 @@
+[
+  {
+    "id": "owner-dbc572f6ef22",
+    "username": "admin",
+    "passwordHash": "776ab7e2beddde63c40722595ebdaed022756e2c78ed02ba2eda5ddbb1f30974d8224d66f399dac4282364bcbcc913f053e5a8692e26306da482593ee78f2137",
+    "salt": "7ba6f7bdbb6aa786789c123d4ebbd120",
+    "fullName": "Owner",
+    "role": "owner",
+    "countryId": null,
+    "assignedRoomIds": [],
+    "permissions": [],
+    "permissionsExplicit": false,
+    "status": "active",
+    "createdBy": null,
+    "createdAt": "2026-09-09T14:43:58.108Z",
+    "lastLoginAt": "2026-09-09T15:12:49.984Z"
+  }
+]

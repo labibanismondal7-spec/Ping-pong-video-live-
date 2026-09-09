@@ -1,0 +1,137 @@
+{
+  "+918101221193": {
+    "userId": "28811581",
+    "name": "Rohan",
+    "mobile": "+918101221193",
+    "photo": "",
+    "followers": 0,
+    "following": 0,
+    "followersList": [],
+    "followingList": [],
+    "visitors": 11,
+    "diamonds": 899141248,
+    "level": 3,
+    "idLevel": 3,
+    "lifetimeGiftSent": 1201000,
+    "vipLevel": 5,
+    "banned": false,
+    "verified": false,
+    "agencyId": null,
+    "isHost": true,
+    "activeFrame": null,
+    "customTag": null,
+    "nameEffect": null,
+    "lastDailyRewardAt": null,
+    "lastWeeklyRewardAt": null,
+    "recentRooms": [
+      {
+        "roomId": "71724660ee",
+        "roomNumber": "85006613",
+        "roomName": "RK ROCK",
+        "hostId": "85006613",
+        "hostName": "RK ROCK",
+        "lastVisitAt": "2026-09-09T15:06:12.239Z"
+      },
+      {
+        "roomId": "e286a2e8d1",
+        "roomNumber": "28811581",
+        "roomName": "O",
+        "hostId": "28811581",
+        "hostName": "Rohan",
+        "lastVisitAt": "2026-09-09T14:54:00.288Z"
+      }
+    ],
+    "groups": [],
+    "countryId": "IN",
+    "profile_completed": true,
+    "gender": "Male",
+    "country": "IN",
+    "language": "bn",
+    "svipWealth": 1201000,
+    "svipLevel": 2,
+    "svipMembershipType": "permanent",
+    "svipExpireAt": null,
+    "svipExpiryWarned": false,
+    "assignedTagLevel": null,
+    "vehicleInventory": [],
+    "beans": 1000
+  },
+  "+919832389581": {
+    "userId": "85006613",
+    "name": "RK ROCK",
+    "mobile": "+919832389581",
+    "photo": "",
+    "followers": 0,
+    "following": 0,
+    "followersList": [],
+    "followingList": [],
+    "visitors": 13,
+    "diamonds": 5500,
+    "level": 1,
+    "idLevel": 0,
+    "lifetimeGiftSent": 1000,
+    "vipLevel": 5,
+    "banned": false,
+    "verified": false,
+    "agencyId": "ag_0b9ecac0",
+    "isHost": true,
+    "activeFrame": {
+      "frameId": "50f7b8aa-1bc0-4da8-a489-d514796f8d5d",
+      "name": "Seller",
+      "imageUrl": "/frames/ce9f202c-21be-47a7-8c9a-6c2c9e1793e9.png",
+      "expiresAt": null
+    },
+    "customTag": null,
+    "nameEffect": null,
+    "lastDailyRewardAt": null,
+    "lastWeeklyRewardAt": null,
+    "recentRooms": [
+      {
+        "roomId": "71724660ee",
+        "roomNumber": "85006613",
+        "roomName": "RK ROCK",
+        "hostId": "85006613",
+        "hostName": "RK ROCK",
+        "lastVisitAt": "2026-09-09T15:13:14.673Z"
+      },
+      {
+        "roomId": "e286a2e8d1",
+        "roomNumber": "28811581",
+        "roomName": "O",
+        "hostId": "28811581",
+        "hostName": "Rohan",
+        "lastVisitAt": "2026-09-09T14:48:30.107Z"
+      }
+    ],
+    "groups": [],
+    "countryId": "IN",
+    "profile_completed": true,
+    "gender": "Male",
+    "country": "IN",
+    "language": "en",
+    "svipWealth": 1000,
+    "svipLevel": 0,
+    "svipMembershipType": "permanent",
+    "svipExpireAt": null,
+    "svipExpiryWarned": false,
+    "assignedTagLevel": null,
+    "vehicleInventory": [],
+    "frameInventory": [
+      {
+        "frameId": "gold-classic",
+        "assignedAt": "2026-09-09T14:51:53.836Z",
+        "expiresAt": null,
+        "permanent": true,
+        "assignedBy": "admin"
+      },
+      {
+        "frameId": "50f7b8aa-1bc0-4da8-a489-d514796f8d5d",
+        "assignedAt": "2026-09-09T14:52:03.799Z",
+        "expiresAt": null,
+        "permanent": true,
+        "assignedBy": "admin"
+      }
+    ],
+    "beans": 1201000
+  }
+}

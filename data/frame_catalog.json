@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gold-classic",
+    "name": "Gold Classic",
+    "vipOnly": false,
+    "imageUrl": null
+  },
+  {
+    "id": "royal-flame",
+    "name": "Royal Flame",
+    "vipOnly": true,
+    "imageUrl": null
+  },
+  {
+    "id": "50f7b8aa-1bc0-4da8-a489-d514796f8d5d",
+    "name": "Seller",
+    "vipOnly": false,
+    "imageUrl": "/frames/ce9f202c-21be-47a7-8c9a-6c2c9e1793e9.png",
+    "createdAt": "2026-09-09T14:51:23.071Z"
+  }
+]

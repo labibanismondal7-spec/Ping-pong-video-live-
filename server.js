@@ -2095,14 +2095,13 @@ app.post("/api/auth/send-otp", otpLimiter, async (req, res) => {
         // the OTP message prefilled. The user must still tap Send.
         const otpTestMode = String(process.env.OTP_TEST_MODE || "false").trim().toLowerCase() === "true";
         if (otpTestMode) {
-            const testWaTo = String(process.env.OTP_TEST_WHATSAPP_TO || "").replace(/\D/g, "");
-            if (testWaTo.length < 7 || testWaTo.length > 15) {
-                otpService.revokeOtp(mobile, issued.requestId);
-                return res.json({ success: false, code: "otp-test-whatsapp-not-configured", message: "OTP test WhatsApp number is not configured." });
-            }
-            const whatsappTestUrl = `https://wa.me/${testWaTo}?text=${encodeURIComponent(smsText)}`;
-            console.log(`[otp] TEST MODE: WhatsApp handoff prepared for configured test recipient`);
-            return res.json({ success: true, testMode: true, whatsappTestUrl, message: "OTP test message prepared for WhatsApp." });
+            console.log(`[otp] TEST MODE: fixed OTP active (${otpService.OTP_TEST_FIXED || "2525"})`);
+            return res.json({
+                success: true,
+                testMode: true,
+                requestId: issued.requestId,
+                message: "Test OTP sent successfully."
+            });
         }
 
         const smsResult = await smsGateway.sendSms({ to: mobile, message: smsText });

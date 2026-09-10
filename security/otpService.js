@@ -53,6 +53,10 @@ function initOtpService({ DATA_FOLDER, safeRead, safeWrite } = {}) {
     }
 
     const OTP_LENGTH = envInt("OTP_LENGTH", 6);
+    // TEST MODE ONLY: fixed OTP for local/staging account creation/login.
+    // Set OTP_TEST_MODE=false before production use.
+    const OTP_TEST_MODE = String(process.env.OTP_TEST_MODE || "false").trim().toLowerCase() === "true";
+    const OTP_TEST_FIXED = String(process.env.OTP_TEST_FIXED || "2525").replace(/\\D/g, "").slice(0, 12);
     const OTP_TTL_MS = envInt("OTP_TTL_SECONDS", 300) * 1000;
     const OTP_MAX_ATTEMPTS = envInt("OTP_MAX_ATTEMPTS", 5);
     const RESEND_COOLDOWN_MS = envInt("OTP_RESEND_COOLDOWN_SECONDS", 60) * 1000;
@@ -137,7 +141,9 @@ function initOtpService({ DATA_FOLDER, safeRead, safeWrite } = {}) {
         const cooldown = checkResendCooldown(mobile);
         if (!cooldown.ok) return { error: cooldown };
 
-        const otp = generateNumericOtp(OTP_LENGTH);
+        const otp = OTP_TEST_MODE
+            ? (OTP_TEST_FIXED || "2525")
+            : generateNumericOtp(OTP_LENGTH);
         const salt = crypto.randomBytes(16).toString("hex");
         const requestId = crypto.randomBytes(12).toString("hex");
         store[mobile] = {
@@ -215,6 +221,8 @@ function initOtpService({ DATA_FOLDER, safeRead, safeWrite } = {}) {
         checkResendCooldown,
         maskMobile,
         OTP_LENGTH,
+        OTP_TEST_MODE,
+        OTP_TEST_FIXED,
         OTP_TTL_MS,
         OTP_MAX_ATTEMPTS,
         RESEND_COOLDOWN_MS

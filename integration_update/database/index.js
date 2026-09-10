@@ -118,6 +118,7 @@ async function run({ databaseUrl } = {}) {
           await pool.query(sql);
           ran.push(item.name);
         }
+        const migrations = listMigrations();
         for (const m of migrations) {
             const sql = fs.readFileSync(m.fullPath, "utf8");
             console.log(`[database] applying ${m.module}/${m.file} ...`);

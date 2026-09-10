@@ -1,3 +1,4 @@
+require("./scripts/persistent-bootstrap.js");
 require("dotenv").config();
 const APP_NAME = "PingPong";
 
@@ -44,6 +45,20 @@ process.on("unhandledRejection", (reason) => {
 
 const express = require("express");
 const app = express();
+const HEALTH_ROUTE = (req, res) => {
+  res.status(200).json({
+    ok: true,
+    status: "online",
+    service: "PingPong",
+    database: "postgresql",
+    redis: !!(process.env.REDIS_URL || process.env.REDIS_HOST),
+    storage: process.env.STORAGE_PROVIDER || "local",
+    timestamp: new Date().toISOString()
+  });
+};
+app.get('/health', HEALTH_ROUTE);
+
+
 const http = require("http").createServer(app);
 const { socketIoCorsOptions } = require("./security/corsConfig");
 // PRODUCTION AUDIT FIX (2026-08-10): additive, no-op-if-unused shared HTTP

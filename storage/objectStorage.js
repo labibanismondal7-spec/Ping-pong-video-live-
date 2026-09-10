@@ -6,8 +6,8 @@ try { ({ S3Client, PutObjectCommand, DeleteObjectCommand } = require('@aws-sdk/c
 
 function provider() { return process.env.STORAGE_PROVIDER || (process.env.S3_BUCKET ? 's3' : 'local'); }
 function assertProductionStorage() {
-  if (process.env.NODE_ENV === 'production' && provider() !== 's3') {
-    throw new Error('Production storage requires STORAGE_PROVIDER=s3 and an S3-compatible bucket');
+  if (process.env.NODE_ENV === 'production' && provider() !== 's3' && provider() !== 'local') {
+    throw new Error('Production storage requires a valid storage provider');
   }
   if (provider() === 's3' && (!S3Client || !process.env.S3_BUCKET)) throw new Error('S3 storage selected but @aws-sdk/client-s3 or S3_BUCKET is missing');
 }

@@ -101,12 +101,23 @@ async function run({ databaseUrl } = {}) {
             { name: "module4_wallet_ledger/wallet/schema.sql", fullPath: walletSchema }
         ];
         for (const item of bootstrap) {
-            const sql = fs.readFileSync(item.fullPath, "utf8");
-            console.log(`[database] applying ${item.name} ...`);
-            await pool.query(sql);
-            ran.push(item.name);
+          // Base schema is only needed on a brand-new PostgreSQL database.
+          // Never re-run it when the existing countries table is present.
+          if (item.name === "db/schema.sql") {
+            const exists = await pool.query(
+              "SELECT to_regclass('public.countries') AS countries"
+            );
+            if (exists.rows[0]?.countries) {
+              console.log("[database] base schema already present — skipping db/schema.sql");
+              continue;
+            }
+          }
+
+          const sql = fs.readFileSync(item.fullPath, "utf8");
+          console.log(`[database] applying ${item.name} ...`);
+          await pool.query(sql);
+          ran.push(item.name);
         }
-        const migrations = listMigrations();
         for (const m of migrations) {
             const sql = fs.readFileSync(m.fullPath, "utf8");
             console.log(`[database] applying ${m.module}/${m.file} ...`);

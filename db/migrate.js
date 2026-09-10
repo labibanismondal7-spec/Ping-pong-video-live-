@@ -19,8 +19,8 @@ async function run() {
       // additive wallet/core migrations and never attempt destructive or
       // duplicate CREATE TABLE statements.
       if (file === path.join(__dirname, 'schema.sql')) {
-        const exists = await pool.query("SELECT to_regclass('public.users') AS users");
-        if (exists.rows[0].users) { console.log('[database] base schema already present — skipping db/schema.sql'); continue; }
+        const exists = await pool.query("SELECT to_regclass('public.countries') AS countries");
+        if (exists.rows[0]?.countries) { console.log('[database] base schema already present — skipping db/schema.sql'); continue; }
       }
       await pool.query(fs.readFileSync(file, 'utf8'));
       console.log(`[database] applied ${path.relative(process.cwd(), file)}`);

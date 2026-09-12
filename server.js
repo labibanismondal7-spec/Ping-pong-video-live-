@@ -1,4 +1,3 @@
-require("./scripts/persistent-bootstrap.js");
 require("dotenv").config();
 const APP_NAME = "PingPong";
 
@@ -45,20 +44,6 @@ process.on("unhandledRejection", (reason) => {
 
 const express = require("express");
 const app = express();
-const HEALTH_ROUTE = (req, res) => {
-  res.status(200).json({
-    ok: true,
-    status: "online",
-    service: "PingPong",
-    database: "postgresql",
-    redis: !!(process.env.REDIS_URL || process.env.REDIS_HOST),
-    storage: process.env.STORAGE_PROVIDER || "local",
-    timestamp: new Date().toISOString()
-  });
-};
-app.get('/health', HEALTH_ROUTE);
-
-
 const http = require("http").createServer(app);
 const { socketIoCorsOptions } = require("./security/corsConfig");
 // PRODUCTION AUDIT FIX (2026-08-10): additive, no-op-if-unused shared HTTP
@@ -2095,13 +2080,14 @@ app.post("/api/auth/send-otp", otpLimiter, async (req, res) => {
         // the OTP message prefilled. The user must still tap Send.
         const otpTestMode = String(process.env.OTP_TEST_MODE || "false").trim().toLowerCase() === "true";
         if (otpTestMode) {
-            console.log(`[otp] TEST MODE: fixed OTP active (${otpService.OTP_TEST_FIXED || "2525"})`);
-            return res.json({
-                success: true,
-                testMode: true,
-                requestId: issued.requestId,
-                message: "Test OTP sent successfully."
-            });
+            const testWaTo = String(process.env.OTP_TEST_WHATSAPP_TO || "").replace(/\D/g, "");
+            if (testWaTo.length < 7 || testWaTo.length > 15) {
+                otpService.revokeOtp(mobile, issued.requestId);
+                return res.json({ success: false, code: "otp-test-whatsapp-not-configured", message: "OTP test WhatsApp number is not configured." });
+            }
+            const whatsappTestUrl = `https://wa.me/${testWaTo}?text=${encodeURIComponent(smsText)}`;
+            console.log(`[otp] TEST MODE: WhatsApp handoff prepared for configured test recipient`);
+            return res.json({ success: true, testMode: true, whatsappTestUrl, message: "OTP test message prepared for WhatsApp." });
         }
 
         const smsResult = await smsGateway.sendSms({ to: mobile, message: smsText });
@@ -2947,7 +2933,7 @@ app.post("/api/gifts/send", userAuth.requireUserAuth, async (req, res) => {
         const mobile = resolveUserKey(req);
         const sender = users[mobile];
         if (!sender) return res.json({ success: false, message: "Login info not found" });
-        const gift = giftCatalog.find((g) => g.id === giftId && g.enabled !== false);
+        const gift = giftCatalog.find((g) => g.id === giftId && g.enabled !== false) || videoGiftCatalog.find((g) => g.id === giftId && g.enabled !== false);
         if (!gift) return res.json({ success: false, message: "Gift not found" });
         if (!Number.isSafeInteger(gift.price) || gift.price <= 0) return res.json({ success: false, message: "Invalid gift price" });
         if ((sender.diamonds || 0) < gift.price) {
@@ -7846,9 +7832,10 @@ io.on("connection", (socket) => {
         if (found.user.diamonds < amount) return reject("insufficient-balance");
 
         const balanceBefore = found.user.diamonds;
+        const betId = fwNextBetId();
         let balanceAfter;
         if (productionWallet.enabled()) {
-            const wr = await productionWallet.debit(found.user.userId, "diamonds", amount, "Fruit Wheel bet", `fruit-wheel:${roomId}:${g.roundId}`, productionWallet.txnId(`fruit-wheel-bet:${roomId}:${g.roundId}:${found.user.userId}:${foodId}:${amount}`));
+            const wr = await productionWallet.debit(found.user.userId, "diamonds", amount, "Fruit Wheel bet", `fruit-wheel:${roomId}:${g.roundId}`, productionWallet.txnId(`fruit-wheel-bet:${roomId}:${g.roundId}:${found.user.userId}:${betId}`));
             if (!wr || wr.status === "rejected") return reject("wallet-transaction-rejected");
             balanceAfter = Number(wr.balanceAfter); found.user.diamonds = balanceAfter;
         } else {
@@ -7863,7 +7850,7 @@ io.on("connection", (socket) => {
         // req #1/#5: unique Bet ID for every individual bet action, kept
         // separate from g.bets (the aggregated payout source of truth, left
         // untouched) purely for audit/history traceability.
-        const betId = fwNextBetId();
+        
         if (!g.betLog) g.betLog = [];
         g.betLog.push({ betId, userId: socket.userId, name: found.user.name, foodId, amount, balanceBefore, balanceAfter, roundId: g.roundId, at: Date.now() });
 
